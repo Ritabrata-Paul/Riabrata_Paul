@@ -34,13 +34,13 @@ class RandomImage extends React.Component {
         <img className="random-image" src={imageUrl} alt="Random" />
 
         <div className="share-buttons">
-          <FacebookShareButton url={window.location.href} quote="Check out this random image!">
+          <FacebookShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" quote="Check out this random image!">
             <FacebookIcon size={32} round />
           </FacebookShareButton>
-          <TwitterShareButton url={window.location.href} title="Check out this random image!">
+          <TwitterShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" title="Check out this random image!">
             <TwitterIcon size={32} round />
           </TwitterShareButton>
-          <WhatsappShareButton url={window.location.href} title="Check out this random image!">
+          <WhatsappShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" title="Check out this random image!">
             <WhatsappIcon size={32} round/>
           </WhatsappShareButton>
         </div>
