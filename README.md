@@ -28,16 +28,10 @@ The project utilizes the following dependencies:
 
 - React: A JavaScript library for building user interfaces.
 - React Router: A library for handling navigation within a React application.
-- [Random Image API/Library]: The specific API or library used to fetch random images. (Provide details or link if applicable)
-- [Other dependencies, if any]
+- [Random Image API/Library]: The specific API or library used to fetch random images. (https://picsum.photos/)
+- Share: https://www.npmjs.com/package/react-share
 
 ## Contributing
 
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please feel free to submit a pull request or open an issue in the repository.
 
-
-
-## Acknowledgements
-
-- Random image: https://picsum.photos/
-- Share: https://www.npmjs.com/package/react-share
