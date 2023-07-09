@@ -1,5 +1,5 @@
 import React from 'react';
-import { FacebookShareButton, TwitterShareButton, WhatsappShareButton,FacebookIcon, TwitterIcon, WhatsappIcon  } from 'react-share';
+import { FacebookIcon, TwitterIcon, WhatsappIcon  } from 'react-share';
 import './RandomImage.css';
 
 class RandomImage extends React.Component {
@@ -26,6 +26,30 @@ class RandomImage extends React.Component {
       });
   };
 
+  shareOnFacebook = () => {
+    const { imageUrl } = this.state;
+    const shareUrl = `https://riabrata-paul-ritabrata-paul.vercel.app/`;
+    const quote = `Check out this random image!`;
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(quote)}&picture=${encodeURIComponent(imageUrl)}`;
+    window.open(facebookShareUrl, '_blank');
+  };
+
+  shareOnTwitter = () => {
+    const { imageUrl } = this.state;
+    const shareUrl = `https://riabrata-paul-ritabrata-paul.vercel.app/`;
+    const message = `Check out this random image! ${shareUrl}`;
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(message)}&picture=${encodeURIComponent(imageUrl)}`;
+    window.open(twitterShareUrl, '_blank');
+  };
+
+  shareOnWhatsApp = () => {
+    const { imageUrl } = this.state;
+    const shareUrl = `https://riabrata-paul-ritabrata-paul.vercel.app/`;
+    const message = `Check out this random image! ${shareUrl}`;
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)} ${encodeURIComponent(imageUrl)}`;
+    window.open(whatsappShareUrl, '_blank');
+  };
+
   render() {
     const { imageUrl } = this.state;
 
@@ -34,15 +58,15 @@ class RandomImage extends React.Component {
         <img className="random-image" src={imageUrl} alt="Random" />
 
         <div className="share-buttons">
-          <FacebookShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" quote="Check out this random image!">
+          <button onClick={this.shareOnFacebook}>
             <FacebookIcon size={32} round />
-          </FacebookShareButton>
-          <TwitterShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" title="Check out this random image!">
+          </button>
+          <button onClick={this.shareOnTwitter}>
             <TwitterIcon size={32} round />
-          </TwitterShareButton>
-          <WhatsappShareButton url="https://riabrata-paul-ritabrata-paul.vercel.app/" title="Check out this random image!">
-            <WhatsappIcon size={32} round/>
-          </WhatsappShareButton>
+          </button>
+          <button onClick={this.shareOnWhatsApp}>
+            <WhatsappIcon size={32} round />
+          </button>
         </div>
       </div>
     );
